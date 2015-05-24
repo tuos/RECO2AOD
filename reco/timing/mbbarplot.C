@@ -99,7 +99,7 @@ double percent[nx];
    h0->GetYaxis()->SetTitleOffset(1.1);
    h0->GetYaxis()->CenterTitle();
    h0->SetTickLength(0.01);
-   h0->SetMaximum(16);  
+   h0->SetMaximum(15);  
    //h0->GetXaxis()->SetUserRange(-0.5, 29.5);
 
    TCanvas *c1 = new TCanvas("c1","c1",880,660);
