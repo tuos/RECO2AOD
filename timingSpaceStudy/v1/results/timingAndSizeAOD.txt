@@ -26,6 +26,7 @@ for total events, not for 100 events, so we need to rescale:
 2760 GeV 2011 L2DoubleMu3 (HIDiMuon? skim)            |    100      |  29.621637*100/100       |  108
 2760 GeV 2011 HLT_HIUCC015_v* (HIMinBiasUPC)          |    100      |  3.224001*3089/100       |  265
 ---------------------------
+These scale factors are from the above log file. The CPU/event numbers are also from the same file.
 
 
 
