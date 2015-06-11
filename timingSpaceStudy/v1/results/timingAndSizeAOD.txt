@@ -1,0 +1,31 @@
+
+
+Data Sets or Triggers (PDs)                           | # of Event  |  CPU/event (s)  | total size (MB)  
+
+2760 GeV MB Hydjet                                    |    100      |  11.991084      |  105
+5020 GeV MB Hydjet                                    |    100      |  23.932549      |  154
+2760 GeV Ncoll-filtered Hydjet                        |    62       |  34.228740      |  157
+5020 GeV Ncoll-filtered Hydjet                        |    62       |  75.147326      |  237
+
+2760 GeV 2011 HLT_HIMinBiasHfOrBSC_v* (HIMinBiasUPC)  |    100      |  3.249483       |  46
+2760 GeV 2011 HLT_HIJet80_v* (HIHighPt)               |    100      |  1.294825       |  125
+2760 GeV 2011 L2DoubleMu3 (HIDiMuon? skim)            |    100      |  29.621637      |  108
+2760 GeV 2011 HLT_HIUCC015_v* (HIMinBiasUPC)          |    100      |  3.224001       |  265
+
+All the 8 AOD productions are done in the same slurm job at ACCRE, which means they are ran on the same node (vmp405, JOBID: 2503001).
+(The volume size in the table are total size not per-event)
+
+It's difficult to understand to timing results for real data. 
+Here is the log file:
+/afs/cern.ch/user/t/tuos/work/public/reco2AOD/round3/CMSSW_7_5_0_pre5/src/timingSpace/timingLogFromACCRE.out
+From the file, I can see that for real data, since some events can not pass the triggers, maybe the CPU/event are
+for total events, not for 100 events, so we need to rescale:
+---------------------------
+2760 GeV 2011 HLT_HIMinBiasHfOrBSC_v* (HIMinBiasUPC)  |    100      |  3.249483*240/100        |  46
+2760 GeV 2011 HLT_HIJet80_v* (HIHighPt)               |    100      |  1.294825*2541/100       |  125
+2760 GeV 2011 L2DoubleMu3 (HIDiMuon? skim)            |    100      |  29.621637*100/100       |  108
+2760 GeV 2011 HLT_HIUCC015_v* (HIMinBiasUPC)          |    100      |  3.224001*3089/100       |  265
+---------------------------
+
+
+
