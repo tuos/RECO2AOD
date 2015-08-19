@@ -1,0 +1,4 @@
+submit slurm jobs in cms_stage2, which could run immediately (but should not submit more than 30 jobs at the same time):
+
+sbatch --account=cms_stage2 mc.slurm 
+
