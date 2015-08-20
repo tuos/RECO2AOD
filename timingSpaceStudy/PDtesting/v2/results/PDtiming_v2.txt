@@ -1,0 +1,92 @@
+# CMSSW: CMSSW_7_5_0; AOD production with RAW PD files from Krisztian (/store/group/phys_heavyions/krajczar/ForTimingTest/180815/).
+# The Time/event(s) numbers are updated comparing with the first version. 
+# The new numbers are from the average of running the RECO for each PD three times on different nodes.
+# The MaxRate for each PD is added, assuming 24h(could be 40h) max processing time for each lumi section or each job
+
+  PDs                           Time/event(s)          NumberOfEvents       Size/event(MB)     MaxRate(Hz)
+-----------------------------------------------------------------------------------------------------------
+Bottomonia                          54                      41                 2.1                70
+-----------------------------------------------------------------------------------------------------------
+Charmonia                           81                      46                 2.2                46
+-----------------------------------------------------------------------------------------------------------
+EWQExo                              52                      117                1.7                72
+-----------------------------------------------------------------------------------------------------------
+HighPtJet100                        47                      79                 1.7                79
+-----------------------------------------------------------------------------------------------------------
+HighPtLowerJetsPhotons              63                      44                 2.1                60
+-----------------------------------------------------------------------------------------------------------
+HighPtPhoton40AndZ                  63                      105                1.9                60
+-----------------------------------------------------------------------------------------------------------
+OniaCent30100                       10                      70                 0.7                376
+-----------------------------------------------------------------------------------------------------------
+OniaTnP                             58                      106                1.8                65
+-----------------------------------------------------------------------------------------------------------
+UCC                                 169                     32                 3.9                22
+-----------------------------------------------------------------------------------------------------------
+
+Note: The statistical uncertainty for the time/event in the table should be somewhere between 10-20%.
+
+A note from Krisztian:
+The number of events in the PDs are the number of events outputed by HLT 
+after L1 and HLT prescles on ~184k Hydjet Minimum bias events, which, 
+assuming 30 kHz of collision rate (which is the expected peak rate) 
+corresponds to ~6 s of collision data.
+
+From Krisztian: Need to check if nonuniqueness of run, lumi and event number make cmsRun skip some events.
+-Checked. The answer is no. The number of events in the RECO(AOD) files I got are the same
+as the number of events in the input RAW files for each PD.
+
+From Krisztian's google doc file (https://docs.google.com/spreadsheets/d/1Ehpwh2tVWz2IjVT0zLixTJH4g2_WvnDLMlmQlXV6v9M/edit?pli=1#gid=1935921469):
+
+   PDs                             Path names
+----------------------------------------------------------
+Bottomonia                 HLT_HIL3DoubleMu0_OS_er16_Upsilon_v1(*)
+                           HLT_HIL3DoubleMu0_OS_er16to24_Upsilon_v1(*)
+----------------------------------------------------------
+Charmonia                  HLT_HIL3DoubleMu0_OS_er16_JpsiPsi_v1(*)
+                           HLT_HIL3DoubleMu0_OS_er16to24_JpsiPsi_v1(*)
+----------------------------------------------------------
+EWQExo                     HLT_HIL2Mu15_v1(*)
+                           HLT_HIL2Mu20_v1(*)
+
+                           HLT_HIL3Mu14_v1(*)
+----------------------------------------------------------
+HighPtJet100               HLT_PuAK4CaloJet100_Eta2p1_v1
+                           HLT_PuAK4CaloJet110_Eta2p1_v1
+                           HLT_PuAK4CaloJet120_Eta2p1_v1
+----------------------------------------------------------
+HighPtLowerJetsPhotons     HLT_PuAK4CaloJet40_Eta2p1_v1
+                           HLT_PuAK4CaloJet60_Eta2p1_v1
+                           HLT_PuAK4CaloJet80_Eta2p1_v1
+
+                           HLT_HISinglePhoton10_Eta2p1_v1
+                           HLT_HISinglePhoton15_Eta2p1_v1
+                           HLT_HISinglePhoton20_Eta2p1_v1
+                           HLT_HISinglePhoton30_Eta2p1_v1
+----------------------------------------------------------
+HighPtPhoton40AndZ         HLT_HISinglePhoton40_Eta2p1_v1
+                           HLT_HISinglePhoton50_Eta2p1_v1
+                           HLT_HISinglePhoton60_Eta2p1_v1
+
+                           HLT_HIDoublePhoton15_Eta1p5_Mass50_1000_v1
+----------------------------------------------------------
+OniaCent30100              HLT_HIL3DoubleMu0_Cent3050_v1(*)
+                           HLT_HIL3DoubleMu0_Cent50100_v1(*)
+----------------------------------------------------------
+OniaTnP                    HLT_HIL2Mu7_v1(*)
+
+                           HLT_HIL2Mu3_NHitQ_v1(*)
+
+                           HLT_HIL3Mu3_v1(*)
+                           HLT_HIL3Mu5_v1(*)
+                           HLT_HIL3Mu7_v1(*)
+----------------------------------------------------------
+UCC                        HLT_HIUCC100_v1
+                           HLT_HIUCC020_v1
+----------------------------------------------------------
+
+
+
+
+
+
